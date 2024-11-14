@@ -1,36 +1,19 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# QCodeRGen
 
-## Getting Started
+QCodeRGen é um gerador de QR Code! Este projeto permite que o usuário crie QR Codes personalizados de forma simples e rápida. Com ele, você pode gerar QR Codes para links e envio de emails, além de personalizar a cor e adicionar uma logo no centro do QR Code.
 
-First, run the development server:
+## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Gerar QR Code para links**: Permite ao usuário criar um QR Code a partir de um link fornecido.
+- **Gerar QR Code para email**: Permite ao usuário criar um QR Code que, ao ser escaneado, inicia a composição de um novo email com destinatário e assunto especificados.
+- **Personalização de cor**: O usuário pode escolher a cor do QR Code para torná-lo mais atraente e adequado ao seu design.
+- **Adicionar logo**: O usuário pode adicionar uma imagem ou logo no centro do QR Code, tornando-o ideal para personalização de marcas.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como Usar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Acesse o site: [QR Code Generator](https://seusite.com).
+2. Escolha o tipo de QR Code que deseja gerar (link ou email).
+3. Personalize o QR Code com a cor e a logo que preferir.
+4. Faça o download do QR Code gerado.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Desenvolvido com 💙 por [LipeMachado](https://github.com/LipeMachado)
