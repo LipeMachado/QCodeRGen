@@ -159,7 +159,7 @@ export default function QRCodeGenerator() {
                         />
                       </div>
                       <Button 
-                        className='py-5 px-8 bg-[#057FFF] hover:bg-[#057FFF]/80'
+                        className='py-5 px-8 bg-[#08080D] hover:bg-[#262626] transition-colors border-2 border-white/70'
                         onClick={handleEmailInput}  
                       >
                         Generate Email QR Code
