@@ -27,7 +27,7 @@ export default function QRCodeGenerator() {
 
   const [url, setUrl] = useState<string>("");
   const [color, setColor] = useState("#FFFFFF");
-  const [bgColor, setBgColor] = useState("#08080D");
+  const [bgColor, setBgColor] = useState("#000000");
   const [logo, setLogo] = useState<string | null>(null);
   const [logoFile, setLogoFile] = useState<File | null>();
   const [qrType, setQrType] = useState("link");
@@ -253,7 +253,7 @@ export default function QRCodeGenerator() {
                   </div>
                 </div>
               </div>
-              <div className='relative flex-1 bg-[#08080D] rounded-lg flex flex-col justify-center space-y-6'>
+              <div className='relative flex-1 bg-black border-white/70 border-2 rounded-lg flex flex-col justify-center space-y-6'>
                 <span>
                   <LayoutGrid className='w-8 h-8 text-white absolute top-4 right-4' />
                 </span>
