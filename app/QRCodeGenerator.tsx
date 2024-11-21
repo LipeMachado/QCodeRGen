@@ -16,7 +16,6 @@ import {
 import { Download, LayoutGrid, Link, Mail } from 'lucide-react'
 import { Label } from '@/components/ui/label'
 import { Input } from '@/components/ui/input'
-import { read } from 'fs'
 import { QRCodeSVG } from 'qrcode.react'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
