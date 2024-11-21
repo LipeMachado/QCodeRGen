@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "QR Code Generator",
-  description: "QR Code Generator",
+  title: "QCodeR Gen",
+  description: "QCodeR Gen",
 };
 
 export default function RootLayout({

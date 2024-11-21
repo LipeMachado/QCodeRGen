@@ -27,7 +27,7 @@ export default function QRCodeGenerator() {
 
   const [url, setUrl] = useState<string>("");
   const [color, setColor] = useState("#FFFFFF");
-  const [bgColor, setBgColor] = useState("#057FFF");
+  const [bgColor, setBgColor] = useState("#08080D");
   const [logo, setLogo] = useState<string | null>(null);
   const [logoFile, setLogoFile] = useState<File | null>();
   const [qrType, setQrType] = useState("link");
@@ -67,9 +67,9 @@ export default function QRCodeGenerator() {
   return (
     <>
       <div className='relative z-10 mx-6 flex max-w-[1250px] w-full min-h-[700px] h-full '>
-        <Card className='flex-1 flex flex-col w-full h-auto mx-auto bg-[#ecf7ff]/80 backdrop-blur-md shadow-sm border-2 border-white/40 rounded-xl'>
+        <Card className='flex-1 flex flex-col w-full h-auto mx-auto bg-black backdrop-blur-md shadow-sm border-2 border-[#262626] rounded-xl'>
           <CardHeader>
-            <CardTitle className='text-3xl font-bold text-center text-[#037fff]'>QR Code Generator</CardTitle>
+            <CardTitle className='text-3xl font-bold text-center text-white'>QR Code Generator</CardTitle>
           </CardHeader>
           <CardContent className='flex-1'>
             <div className='h-full flex flex-col md:flex-row gap-8'>
@@ -79,12 +79,12 @@ export default function QRCodeGenerator() {
                   className='space-y-6'
                   onValueChange={(val)=> setQrType(val)}
                 >
-                  <TabsList className='h-10 w-full grid grid-cols-2 bg-[#057FFF] text-lg'>
-                    <TabsTrigger value='link' className='text-white font-bold'>
+                  <TabsList className='h-10 w-full grid grid-cols-2 bg-[#262626] text-lg'>
+                    <TabsTrigger value='link' className={`font-bold ${qrType === 'link' ? 'text-black' : 'text-white'}`}>
                       <Link className='w-4 h-4 mr-2' />
                       Link
                     </TabsTrigger>
-                    <TabsTrigger value='email' className='text-white font-bold'>
+                    <TabsTrigger value='email' className={`font-bold ${qrType === 'email' ? 'text-black' : 'text-white'}`}>
                       <Mail className='w-4 h-4 mr-2' />
                       Email
                     </TabsTrigger>
@@ -95,7 +95,7 @@ export default function QRCodeGenerator() {
                       <div className='space-y-2'>
                         <Label
                           htmlFor='url'
-                          className='font-semibold text-[#057FFF]'
+                          className='font-semibold text-white'
                         >
                           URL
                         </Label>
@@ -105,7 +105,7 @@ export default function QRCodeGenerator() {
                           value={url}
                           placeholder='https://example.com'
                           onChange={(e) => setUrl(e.target.value)}
-                          className='w-full border-2 bg-transparent border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
+                          className='w-full border-2 bg-transparent text-white border-white/70 focus:border-[#262626]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
                         />
                       </div>
                     </div>
@@ -116,7 +116,7 @@ export default function QRCodeGenerator() {
                       <div className='space-y-2'>
                         <Label
                           htmlFor='email'
-                          className='font-semibold text-[#057FFF]'
+                          className='font-semibold text-white'
                         >
                           Email
                         </Label>
@@ -126,13 +126,13 @@ export default function QRCodeGenerator() {
                           value={email}
                           placeholder='Enter Email'
                           onChange={(e) => setEmail(e.target.value)}
-                          className='w-full border-2 bg-transparent border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
+                          className='w-full border-2 bg-transparent text-white border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
                         />
                       </div>
                       <div className='space-y-2'>
                         <Label
                           htmlFor='subject'
-                          className='font-semibold text-[#057FFF]'
+                          className='font-semibold text-white'
                         >
                           Subject
                         </Label>
@@ -142,20 +142,20 @@ export default function QRCodeGenerator() {
                           value={subject}
                           placeholder='Subject'
                           onChange={(e) => setSubject(e.target.value)}
-                          className='w-full border-2 bg-transparent border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
+                          className='w-full border-2 bg-transparent text-white border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
                         />
                       </div>
                       <div className='space-y-2'>
                         <Label
                           htmlFor="message"
-                          className="font-semibold text-[#057FFF]"
+                          className="font-semibold text-white"
                         ></Label>
                         <Textarea
                           id="message"
                           value={message}
                           placeholder="Enter Message"
                           onChange={(e) => setMessage(e.target.value)}
-                          className='w-full border-2 bg-transparent border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400 h-24 resize-none'
+                          className='w-full border-2 bg-transparent text-white border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400 h-24 resize-none'
                         />
                       </div>
                       <Button 
@@ -173,7 +173,7 @@ export default function QRCodeGenerator() {
                     <div className="space-y-2 flex-1">
                       <Label
                         htmlFor="color"
-                        className="font-semibold text-[#057FFF]"
+                        className="font-semibold text-white"
                       >
                         QR Code Color
                       </Label>
@@ -194,14 +194,14 @@ export default function QRCodeGenerator() {
                           type="text"
                           value={color}
                           onChange={(e) => setColor(e.target.value)}
-                          className="flex-1 border-2 h-12 bg-transparent  border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400"
+                          className="flex-1 border-2 h-12 bg-transparent text-white border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400"
                         />
                       </div>
                     </div>
                     <div className="space-y-2 flex-1">
                       <Label
                         htmlFor="color"
-                        className="font-semibold text-[#057FFF]"
+                        className="font-semibold text-white"
                       >
                         Background Color
                       </Label>
@@ -222,7 +222,7 @@ export default function QRCodeGenerator() {
                           type="text"
                           value={bgColor}
                           onChange={(e) => setBgColor(e.target.value)}
-                          className="flex-1 border-2 h-12 bg-transparent  border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400"
+                          className="flex-1 border-2 h-12 bg-transparent text-white border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400"
                         />
                       </div>
                     </div>
@@ -230,7 +230,7 @@ export default function QRCodeGenerator() {
                   <div className='space-y-2'>
                     <Label
                       htmlFor='logo'
-                      className='font-bold text-[#037FFF]'
+                      className='font-bold text-white'
                     >
                       Logo
                     </Label>
@@ -248,12 +248,12 @@ export default function QRCodeGenerator() {
                           reader.readAsDataURL(e.target.files[0])
                         }
                       }}
-                      className='w-full border-2 bg-transparent border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
+                      className='w-full border-2 bg-transparent text-[#959CA7] border-white/70 focus:border-[#057FFF]/70 rounded-md outline-none focus-visible:ring-0 placeholder:text-gray-400'
                     />
                   </div>
                 </div>
               </div>
-              <div className='relative flex-1 bg-[#037FFF] rounded-lg flex flex-col justify-center space-y-6'>
+              <div className='relative flex-1 bg-[#08080D] rounded-lg flex flex-col justify-center space-y-6'>
                 <span>
                   <LayoutGrid className='w-8 h-8 text-white absolute top-4 right-4' />
                 </span>
